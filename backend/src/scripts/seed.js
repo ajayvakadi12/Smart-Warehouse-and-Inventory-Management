@@ -13,7 +13,7 @@ const Product = require("../models/Product");
 const Rack = require("../models/Rack");
 const Bin = require("../models/Bin");
 const StockTransaction = require("../models/StockTransaction");
-const Order = require("../models/Order");
+const Order = require("../models/order");
 const Shipment = require("../models/Shipment");
 const InventoryLog = require("../models/InventoryLog");
 

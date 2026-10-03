@@ -6,7 +6,7 @@ const connectDB = require("../config/database");
 const Product = require("../models/Product");
 const Warehouse = require("../models/Warehouse");
 const Supplier = require("../models/Supplier");
-const Order = require("../models/Order");
+const Order = require("../models/order");
 const Shipment = require("../models/Shipment");
 const StockTransaction = require("../models/StockTransaction");
 

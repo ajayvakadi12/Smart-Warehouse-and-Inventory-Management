@@ -1,5 +1,5 @@
 const Product = require("../models/Product");
-const Order = require("../models/Order");
+const Order = require("../models/order");
 const Shipment = require("../models/Shipment");
 const Warehouse = require("../models/Warehouse");
 const Category = require("../models/Category");
@@ -119,8 +119,8 @@ exports.getDashboardStats = async (req, res) => {
           p.quantity <= 10
             ? "Reorder Immediately"
             : daysRemaining <= 7
-            ? "Reorder Soon"
-            : "Adequate Stock",
+              ? "Reorder Soon"
+              : "Adequate Stock",
       };
     });
 
