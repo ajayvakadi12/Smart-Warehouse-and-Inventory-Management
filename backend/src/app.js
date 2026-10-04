@@ -46,7 +46,15 @@ app.use("/api/orders", orderRoutes);
 app.use("/api/reports", reportRoutes);
 app.use("/api/notifications", notificationRoutes);
 
-// Health check
+// Root route & Health check
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Smart Warehouse & Inventory Management API is running!",
+    health: "/api/health",
+  });
+});
+
 app.get("/api/health", (req, res) => {
   res.json({ status: "OK", timestamp: new Date() });
 });
