@@ -1,10 +1,8 @@
 const dotenv = require("dotenv");
+const path = require("path");
 
-dotenv.config();
-
-/*require("dotenv").config({
-  path: require("path").resolve(__dirname, "../../.env")
-});*/
+// Load .env from project root (two levels above /backend/src/)
+dotenv.config({ path: path.resolve(__dirname, "../../.env") });
 
 const connectDB = require("./config/database");
 const app = require("./app");

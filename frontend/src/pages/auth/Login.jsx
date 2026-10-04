@@ -1,16 +1,16 @@
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { loginUser } from "../../services/authService";
-import { Lock, Mail, ShieldCheck, Box, UserCheck } from "lucide-react";
+import { Lock, Mail, ShieldCheck, Box } from "lucide-react";
 
 function Login() {
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
 
   const [formData, setFormData] = useState({
-    email: "admin@warehouse.com",
-    password: "Admin@123",
+    email: "",
+    password: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -23,16 +23,6 @@ function Login() {
     });
   }
 
-  function setDemoCredentials(role) {
-    if (role === "Admin") {
-      setFormData({ email: "admin@warehouse.com", password: "Admin@123" });
-    } else if (role === "Manager") {
-      setFormData({ email: "manager@warehouse.com", password: "Manager@123" });
-    } else if (role === "Staff") {
-      setFormData({ email: "staff@warehouse.com", password: "Staff@123" });
-    }
-    setError("");
-  }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -128,9 +118,17 @@ function Login() {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">
-                Password
-              </label>
+              <div className="flex items-center justify-between mb-2">
+                <label className="block text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                  Password
+                </label>
+                <Link
+                  to="/forgot-password"
+                  className="text-xs text-blue-600 font-semibold hover:underline"
+                >
+                  Forgot Password?
+                </Link>
+              </div>
               <div className="relative">
                 <Lock className="absolute left-3.5 top-3.5 text-slate-400" size={18} />
                 <input
@@ -164,34 +162,17 @@ function Login() {
             </button>
           </form>
 
-          {/* Quick Demo Credentials */}
-          <div className="mt-8 pt-6 border-t border-slate-100">
-            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">
-              One-Click Demo Roles
+          {/* Sign Up Link */}
+          <div className="mt-7 pt-6 border-t border-slate-100 text-center">
+            <p className="text-sm text-slate-500">
+              Don&apos;t have an account?{" "}
+              <Link
+                to="/register"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Sign Up
+              </Link>
             </p>
-            <div className="grid grid-cols-3 gap-2">
-              <button
-                type="button"
-                onClick={() => setDemoCredentials("Admin")}
-                className="py-2 px-2 text-xs font-semibold rounded-lg border border-purple-200 bg-purple-50 text-purple-700 hover:bg-purple-100 transition"
-              >
-                👑 Admin
-              </button>
-              <button
-                type="button"
-                onClick={() => setDemoCredentials("Manager")}
-                className="py-2 px-2 text-xs font-semibold rounded-lg border border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 transition"
-              >
-                👔 Manager
-              </button>
-              <button
-                type="button"
-                onClick={() => setDemoCredentials("Staff")}
-                className="py-2 px-2 text-xs font-semibold rounded-lg border border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition"
-              >
-                👷 Staff
-              </button>
-            </div>
           </div>
         </div>
       </div>

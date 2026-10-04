@@ -18,12 +18,16 @@ import StockManagement from "../pages/StockManagement";
 import Notifications from "../pages/Notifications";
 import Profile from "../pages/Profile";
 import Login from "../pages/auth/Login";
+import Register from "../pages/auth/Register";
+import ForgotPassword from "../pages/auth/ForgotPassword";
 
 function AppRoutes() {
   return (
     <Routes>
-      {/* Public Login Route */}
+      {/* Public Routes */}
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
 
       {/* Protected Routes wrapped in Layout */}
       <Route
