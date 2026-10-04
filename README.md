@@ -290,8 +290,3 @@ The frontend is configured for deployment on **Vercel**:
 
 This project is licensed under the **ISC License**. Feel free to use, modify, and distribute it for personal and commercial applications.
 
----
-
-<div align="center">
-  <sub>Built with ❤️ for modern logistics and supply chain optimization.</sub>
-</div>
