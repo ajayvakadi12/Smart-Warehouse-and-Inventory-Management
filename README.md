@@ -9,7 +9,7 @@ A production-ready, full-stack **Warehouse & Inventory Management System (WIMS)*
 | Resource | Link |
 | :--- | :--- |
 | **🚀 Live Deployed App** | [Launch Web Application](https://smart-warehouse-and-inventory-manag.vercel.app/) |
-| **🔐 Direct Login URL** | `https://smart-warehouse-and-inventory-management-dqu6blzwz.vercel.app/login` |
+| **🔐 Direct Login URL** | `https://smart-warehouse-and-inventory-manag.vercel.app/` |
 
 ---
 
